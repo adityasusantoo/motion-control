@@ -354,12 +354,10 @@
                 formData.append('video', videoFile);
 
                 // TEMBAK LANGSUNG KE ENDPOINT MAGNIFIC
-                const magnificApiUrl = 'https://api.magnific.ai/v1/motion'; 
-
-                const response = await fetch(magnificApiUrl, {
+                const response = await fetch('/api/generate', {
                     method: 'POST',
                     headers: {
-                        'Authorization': `Bearer ${apiKey}`
+                        'x-user-api-key': apiKey // API key dikirim lewat header
                     },
                     body: formData
                 });
